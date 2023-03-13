@@ -238,10 +238,33 @@ img {
 .header-item {
   border-bottom: 1px solid #e7e9fc;
 }
+
+
 .header-nav {
   display: flex;
   align-items: center;
 }
+
+.header-nav-item {
+  position: relative;
+}
+.active::after {
+  content: "";
+  height: 4px;
+  width: 100%;
+  background-color: var(--color-button-hover);
+  border-radius: 2px;
+  display: block;
+  position: absolute;
+  bottom: 0;
+ 
+}
+.header-nav-link.active {
+  color: var(--color-button-hover);
+}
+
+
+
 
 /* Hero Image */
 .hero {
