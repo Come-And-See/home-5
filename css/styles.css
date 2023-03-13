@@ -322,8 +322,7 @@ img {
 /* Hero Image */
 .hero {
   background-color: var(--bkg-color);
-  background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
-    url(../images/people-office.jpg);
+  background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/people-office.jpg);
   max-width: 1440px;
 
   margin-left: auto;
@@ -463,8 +462,7 @@ img {
 
 .team-list-item {
   background: var(--color-title-write);
-  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16),
-    0px 2px 1px rgba(46, 47, 66, 0.08);
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
   border-radius: 0px 0px 4px 4px;
 }
 
@@ -665,8 +663,7 @@ img {
 }
 .portfolio-item:hover,
 .portfolio-item:focus {
-  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16),
-    0px 2px 1px rgba(46, 47, 66, 0.08);
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
 .portfolio-item-text {
@@ -679,8 +676,10 @@ img {
 .portfolio-block {
   background-color: var(--color-button);
   height: 100%;
+
   position: absolute;
-  transform: translateY(0);
+  top: 0;
+  transform: translateY(100%);
   opacity: 0;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -692,7 +691,7 @@ img {
 }
 
 .portfolio-link:is(:hover, :focus) .portfolio-block {
-  transform: translateY(-100%);
+  transform: translateY(0);
   opacity: 1;
 }
 
