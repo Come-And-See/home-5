@@ -678,7 +678,7 @@ img {
 
 .portfolio-block {
   background-color: var(--color-button);
-  height: 300px;
+  height: 100%;
   position: absolute;
   transform: translateY(0);
   opacity: 0;
