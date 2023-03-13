@@ -11,6 +11,9 @@
   --bkg-color: #2e2f42;
   --bkg-footer-soc: rgba(255, 255, 255, 0.1);
   --customers-icon: #8e8f99;
+  --modal-backdrop: rgba(46, 47, 66, 0.4);
+  --modal-bkg: #fcfcfc;
+  --modal-button-bkg: #e7e9fc;
 }
 
 body {
@@ -171,6 +174,61 @@ img {
   padding-bottom: 120px;
 }
 
+/* Modal */
+
+.backdrop {
+  background: var(--modal-backdrop);
+
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  scale: 1;
+  transition: opacity 500ms cubic-bezier(0.4, 0, 0.2, 1), scale 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal {
+  width: 408px;
+  height: 576px;
+
+  background: var(--modal-bkg);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+
+.modal-button {
+  position: absolute;
+  right: 24px;
+  top: 24px;
+
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+
+  background: var(--modal-button-bkg);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.modal-close-icon {
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  scale: 0.5;
+}
+
 /* Header */
 
 .logo {
@@ -239,7 +297,6 @@ img {
   border-bottom: 1px solid #e7e9fc;
 }
 
-
 .header-nav {
   display: flex;
   align-items: center;
@@ -249,7 +306,7 @@ img {
   position: relative;
 }
 .active::after {
-  content: "";
+  content: '';
   height: 4px;
   width: 100%;
   background-color: var(--color-button-hover);
@@ -257,14 +314,10 @@ img {
   display: block;
   position: absolute;
   bottom: 0;
- 
 }
 .header-nav-link.active {
   color: var(--color-button-hover);
 }
-
-
-
 
 /* Hero Image */
 .hero {
@@ -621,4 +674,29 @@ img {
   border-right: 1px solid #e7e9fc;
   border-left: 1px solid #e7e9fc;
   padding: 32px 16px;
+}
+
+.portfolio-block {
+  background-color: var(--color-button);
+  height: 300px;
+  position: absolute;
+  transform: translateY(0);
+  opacity: 0;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.portfolio-block-text {
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: var(--color-button-portfolio);
+  padding: 40px 32px 0;
+}
+
+.portfolio-link:is(:hover, :focus) .portfolio-block {
+  transform: translateY(-100%);
+  opacity: 1;
+}
+
+.portfolio-photo-block {
+  position: relative;
+  overflow: hidden;
 }
