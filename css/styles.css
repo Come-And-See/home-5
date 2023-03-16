@@ -699,9 +699,7 @@ img {
   color: var(--color-button-portfolio);
   padding: 40px 32px 0;
 }
-.portfolio-block-text {
 
-}
 
 .portfolio-link:is(:hover, :focus) .portfolio-block {
   transform: translateY(0);
